@@ -9,6 +9,6 @@ namespace Stretcher.Models
     {
         public int FocusId { get; set; }
         public string FocusArea { get; set; }
-        public string Description { get; set; }
+        public string FocusDescription { get; set; }
     }
 }
