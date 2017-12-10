@@ -31,7 +31,7 @@ namespace Stretcher.Controllers
         }
 
 
-
+        //ctor
         public class MakeNewGoal
         {
             public int UserId { get; set; }
@@ -47,31 +47,20 @@ namespace Stretcher.Controllers
         }
 
 
-        // GET api/<controller>
-        public IEnumerable<string> Get()
+        [HttpPut, Route("{id}")]
+        // public void Put(int id, [FromBody]string value)
+        public HttpResponseMessage UpdateGoal() 
         {
-            return new string[] { "value1", "value2" };
+            var db = new ApplicationDbContext();
+           // UpdateGoal.GoalId = id;
+            return Request.CreateResponse(HttpStatusCode.OK);
         }
 
-        // GET api/<controller>/5
-        public string Get(int id)
+        [HttpDelete, Route("{id}")]
+        public HttpResponseMessage DeleteGoal()
         {
-            return "value";
-        }
-
-        // POST api/<controller>
-        public void Post([FromBody]string value)
-        {
-        }
-
-        // PUT api/<controller>/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE api/<controller>/5
-        public void Delete(int id)
-        {
+            //DeleteGoal(GoalID)
+            return Request.CreateResponse(HttpStatusCode.OK);
         }
     }
 }

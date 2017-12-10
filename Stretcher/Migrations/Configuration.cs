@@ -70,6 +70,9 @@ namespace Stretcher.Migrations
 
             context.SaveChanges();
 
+
+            //HOW TO ADD SEED TO JOIN TABLES?!
+
             //context.GoalStretches.Add
             //highlight line, control + . + shift to create variable
             // context.StretchGoals.addorupdate(
