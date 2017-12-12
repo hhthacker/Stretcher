@@ -1,3 +1,4 @@
-﻿app.controller("homeController", function ($routeProvider) {
+﻿app.controller("homeController", function () {
+
 
 });
