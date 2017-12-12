@@ -16,13 +16,13 @@ namespace Stretcher.Controllers
 
         //GET REFLECTION
         //userid and reflectionid
-        [HttpGet, Route("{id}")]
-        public HttpResponseMessage GetOneReflection()
-        {
-            var db = new ApplicationDbContext();
-            var reflection = db.Reflections;
-            return Request.CreateResponse(HttpStatusCode.OK, reflection);
-        }
+        //[HttpGet, Route("{id}")]
+        //public HttpResponseMessage GetOneReflection()
+        //{
+        //    var db = new ApplicationDbContext();
+        //    var reflection = db.Reflections;
+        //    return Request.CreateResponse(HttpStatusCode.OK, reflection);
+        //}
 
         //GET ALL REFLECTIONS
         //userid

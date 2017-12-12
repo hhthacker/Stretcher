@@ -5,7 +5,11 @@
     <title></title>
 </head>
 <body>
-    <h1>this is the list of stretch goals to view or practice</h1>
-    <div ng-repeat="goal in goals"><h1>{{goal.GoalName}}</h1></div>
+    <h1 class="jumbotron">this is the list of stretch goals to view or practice</h1>
+    <div ng-repeat="goal in goals">
+        <h2 class="col-sm-offset-1 col-sm-4">{{goal.GoalName}}</h2>
+        <h3 class="col-sm-offset-1 col-sm-4">{{goal.GoalDescription}}</h3>
+    </div>
+    
 </body>
 </html>

@@ -6,5 +6,20 @@
 </head>
 <body>
     <h1>this is where you choose filters, and then stretches for sequencing a stretch goal</h1>
+
+    <label for="newGoalName">New Goal Name</label>
+    <input id="newGoalName" ng-model="goal.GoalName" />
+
+    <label for="newGoalDescription">Goal Description</label>
+    <input id="newGoalDescription" ng-model="goal.GoalDescription" />
+
+    <label for="newGoal">Intensity of Sequence</label>
+    <select id="newGoal" type="number" ng-model="goal.Intensity">
+        <option value="1">Relaxation</option>
+        <option value="2">Refreshing</option>
+        <option value="3">Deep Stretching</option>
+    </select>
+
+    <button ng-click="AddStretches()">Choose Goal Stretches</button>
 </body>
 </html>
