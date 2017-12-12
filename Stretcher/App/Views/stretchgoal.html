@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title></title>
-</head>
-<body>
-    <h1>this is where you will practice sequences</h1>
-</body>
-</html>
+﻿
+    <h1 class="jumbotron">this is where you will practice sequences</h1>
+
+<div ng-repeat="stretch in stretches">
+
+    <h3 class="col-sm-2">{{stretch.StretchSeqence}} &Aacute; {{stretch.StretchDifficulty}}</h3>
+    <h2 class="col-sm-4">{{stretch.StretchName}}</h2>
+    <h4 class="col-sm-6">{{stretch.StretchDescription}}</h4>
+
+</div>

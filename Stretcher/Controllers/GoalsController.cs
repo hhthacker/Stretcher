@@ -17,13 +17,13 @@ namespace Stretcher.Controllers
         {
             var db = new ApplicationDbContext();
 
-            var newGoal = new Goal
-            {
-                User = db.Users.Find(request.UserId),
-                Intensity = 2
-            };
+          //    var newGoal = new Goal
+          //  {
+          //      User = db.Users.Find(request.UserId),
+          //      Intensity = 2
+          //  };
 
-            db.Goals.Add(newGoal);
+          //  db.Goals.Add(newGOAL);
             db.SaveChanges();
 
             return Request.CreateResponse(HttpStatusCode.Created, newGoal);
