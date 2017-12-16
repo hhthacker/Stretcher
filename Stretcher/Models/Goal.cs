@@ -14,6 +14,7 @@ namespace Stretcher.Models
         public SqlDateTime OriginalGoalDate { get; set; }
         public int Intensity { get; set; }
         public virtual ApplicationUser User { get; set; }
+        public virtual Stretch Stretches { get; set; }
 
     }
 }

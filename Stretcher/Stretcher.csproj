@@ -242,6 +242,10 @@
     <Compile Include="Migrations\201712100030229_SeedData.Designer.cs">
       <DependentUpon>201712100030229_SeedData.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712161531262_VirtualStuffs.cs" />
+    <Compile Include="Migrations\201712161531262_VirtualStuffs.Designer.cs">
+      <DependentUpon>201712161531262_VirtualStuffs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -359,6 +363,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712100030229_SeedData.resx">
       <DependentUpon>201712100030229_SeedData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712161531262_VirtualStuffs.resx">
+      <DependentUpon>201712161531262_VirtualStuffs.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

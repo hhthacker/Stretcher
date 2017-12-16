@@ -11,7 +11,7 @@ namespace Stretcher.Models
         public DateTime ReflectionCreation { get; set; }
         public string ReflectionTitle { get; set; }
         public string ReflectionNotes { get; set; }
-        public int Goal { get; set; }
+        public virtual Goal Goals { get; set; }
 
     }
 }

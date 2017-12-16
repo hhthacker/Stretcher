@@ -63,9 +63,9 @@ namespace Stretcher.Migrations
             );
 
             context.Reflections.AddOrUpdate( r => r.ReflectionTitle,
-                new Reflection() { ReflectionCreation = DateTime.Now, ReflectionTitle = "Hot Breath", ReflectionNotes = "The breath of fire burned my belly like a summer without polar bears", Goal = 1},
-                new Reflection() { ReflectionCreation = DateTime.Now, ReflectionTitle = "Slow Shoulder fo sho", ReflectionNotes = "Ouchie mama my girdles are sizzling!", Goal = 2},
-                new Reflection() { ReflectionCreation = DateTime.Now, ReflectionTitle = "Child poser", ReflectionNotes = "Still a baby, not yet a toddler", Goal = 3}
+                new Reflection() { ReflectionCreation = DateTime.Now, ReflectionTitle = "Hot Breath", ReflectionNotes = "The breath of fire burned my belly like a summer without polar bears"},
+                new Reflection() { ReflectionCreation = DateTime.Now, ReflectionTitle = "Slow Shoulder fo sho", ReflectionNotes = "Ouchie mama my girdles are sizzling!"},
+                new Reflection() { ReflectionCreation = DateTime.Now, ReflectionTitle = "Child poser", ReflectionNotes = "Still a baby, not yet a toddler"}
             );
 
             context.SaveChanges();

@@ -15,5 +15,6 @@ namespace Stretcher.Models
         public SqlDateTime StretchDuration { get; set; }
         public int StretchSequence { get; set; }
         public int StretchDifficulty { get; set; }
+        public virtual Focus Foci { get; set; }
     }
 }
