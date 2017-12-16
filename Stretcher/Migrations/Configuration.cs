@@ -21,7 +21,7 @@ namespace Stretcher.Migrations
             var user = new ApplicationUser
             {
                 UserName = "heather",
-                Email = "hhthacker@gmail.com",
+                Email = "hhthacker@gmail.com"
             };
 
             userManager.CreateAsync(user, "password").Wait();

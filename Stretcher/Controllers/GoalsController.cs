@@ -10,8 +10,8 @@ using Microsoft.AspNet.Identity;
 
 namespace Stretcher.Controllers
 {
-    [RoutePrefix("api/Goals")]
-    [Authorize]
+    [RoutePrefix("api/goals")]
+   // [Authorize]
     public class GoalsController : ApiController
     {
         [HttpPost, Route("")]
@@ -19,25 +19,20 @@ namespace Stretcher.Controllers
         {
             var db = new ApplicationDbContext();
 
-              var newGoal = new Goal
+            var newGoal = new Goal
             {
+
                 Intensity = request.Intensity,
-               // User = db.Users.Find(User.Identity.GetUserId())
+                GoalName = request.GoalName,
+                GoalDescription = request.GoalDescription
+                // User = db.Users.Find(User.Identity.GetUserId())
             };
 
-            db.Goals.Add(newGoal);
+            //   db.Goals.Add(newGoal);
             db.SaveChanges();
 
             return Request.CreateResponse(HttpStatusCode.Created);
 
-        }
-
-
-        //ctor
-        public class MakeNewGoal
-        {
-            public int UserId { get; set; }
-            public int Intensity { get; set; }
         }
 
         [HttpGet, Route("")]
@@ -51,10 +46,10 @@ namespace Stretcher.Controllers
 
         [HttpPut, Route("{id}")]
         // public void Put(int id, [FromBody]string value)
-        public HttpResponseMessage UpdateGoal() 
+        public HttpResponseMessage UpdateGoal()
         {
             var db = new ApplicationDbContext();
-           // UpdateGoal.GoalId = id;
+            // UpdateGoal.GoalId = id;
             return Request.CreateResponse(HttpStatusCode.OK);
         }
 

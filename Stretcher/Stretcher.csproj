@@ -250,6 +250,10 @@
     <Compile Include="Migrations\201712161606250_RemoveStretchGoals.Designer.cs">
       <DependentUpon>201712161606250_RemoveStretchGoals.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712161800269_ModelUpdate.cs" />
+    <Compile Include="Migrations\201712161800269_ModelUpdate.Designer.cs">
+      <DependentUpon>201712161800269_ModelUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -372,6 +376,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712161606250_RemoveStretchGoals.resx">
       <DependentUpon>201712161606250_RemoveStretchGoals.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712161800269_ModelUpdate.resx">
+      <DependentUpon>201712161800269_ModelUpdate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
