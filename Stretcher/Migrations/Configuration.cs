@@ -70,18 +70,6 @@ namespace Stretcher.Migrations
 
             context.SaveChanges();
 
-
-            //HOW TO ADD SEED TO JOIN TABLES?!
-
-            //context.GoalStretches.Add
-            //highlight line, control + . + shift to create variable
-            // context.StretchGoals.addorupdate(
-            //  x= > x.whategvermakesitunique,.
-            //   new stretchgoal { Stretch = appleStretch, goal = superIntense}
-            //   );
-
-            // context.SaveChanges();
-
         }
     }
 }

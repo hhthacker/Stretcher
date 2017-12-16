@@ -6,10 +6,12 @@ using System.Net.Http;
 using System.Web.Http;
 using Stretcher.Models;
 using Stretcher.ViewModels;
+using Microsoft.AspNet.Identity;
 
 namespace Stretcher.Controllers
 {
     [RoutePrefix("api/Goals")]
+    [Authorize]
     public class GoalsController : ApiController
     {
         [HttpPost, Route("")]
@@ -19,7 +21,8 @@ namespace Stretcher.Controllers
 
               var newGoal = new Goal
             {
-                Intensity = 2
+                Intensity = request.Intensity,
+               // User = db.Users.Find(User.Identity.GetUserId())
             };
 
             db.Goals.Add(newGoal);

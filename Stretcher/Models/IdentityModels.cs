@@ -37,7 +37,5 @@ namespace Stretcher.Models
         public System.Data.Entity.DbSet<Stretcher.Models.Reflection> Reflections { get; set; }
 
         public System.Data.Entity.DbSet<Stretcher.Models.Stretch> Stretches { get; set; }
-
-        public System.Data.Entity.DbSet<Stretcher.Models.StretchGoal> StretchGoals { get; set; }
     }
 }

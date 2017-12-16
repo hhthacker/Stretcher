@@ -246,6 +246,10 @@
     <Compile Include="Migrations\201712161531262_VirtualStuffs.Designer.cs">
       <DependentUpon>201712161531262_VirtualStuffs.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712161606250_RemoveStretchGoals.cs" />
+    <Compile Include="Migrations\201712161606250_RemoveStretchGoals.Designer.cs">
+      <DependentUpon>201712161606250_RemoveStretchGoals.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -254,7 +258,6 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Reflection.cs" />
     <Compile Include="Models\Stretch.cs" />
-    <Compile Include="Models\StretchGoal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
@@ -265,7 +268,7 @@
     <Content Include="App\app.js" />
     <Content Include="App\appconfig.js" />
     <Content Include="App\Controllers\allReflectionsController.js" />
-    <Content Include="App\Controllers\authController.js" />
+    <Content Include="App\Controllers\loginController.js" />
     <Content Include="App\Controllers\allGoalsController.js" />
     <Content Include="App\Controllers\homeController.js" />
     <Content Include="App\Controllers\newGoalController.js" />
@@ -273,7 +276,7 @@
     <Content Include="App\Controllers\stretchGoalController.js" />
     <Content Include="App\Views\allgoals.html" />
     <Content Include="App\Views\allreflections.html" />
-    <Content Include="App\Views\auth.html" />
+    <Content Include="App\Views\login.html" />
     <Content Include="App\Views\home.html" />
     <Content Include="App\Views\newgoal.html" />
     <Content Include="App\Views\newreflection.html" />
@@ -366,6 +369,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712161531262_VirtualStuffs.resx">
       <DependentUpon>201712161531262_VirtualStuffs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712161606250_RemoveStretchGoals.resx">
+      <DependentUpon>201712161606250_RemoveStretchGoals.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

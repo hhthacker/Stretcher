@@ -7,7 +7,6 @@ namespace Stretcher.ViewModels
 {
     public class MakeNewGoal
     {
-        public int UserId { get; set; }
         public int Intensity { get; set; }
     }
 }
