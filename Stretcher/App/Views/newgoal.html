@@ -12,21 +12,16 @@
         <option value="2">Refreshing</option>
         <option value="3">Deep Stretching</option>
     </select>
-    <button ng-click="AddStretches()">Choose Goal Stretches</button>
+    <label for="openStretcher">Warm up Stretches</label>
+    <select id="openStretcher" type="number">
+        <option ng-repeat="open in opener" value="{{open.StretchId}}">{{open.StretchName}}</option>
+    </select>
+
+    <button ng-click="CreateGoal()">Choose Goal Stretches</button>
 
 
-<!---------------- STRETCH PICKER -->
-<!-- USE VIEW MODELS FOR DYNAMICALLY CREATING DROP DOWNS -->
 
-    <div ng-hide="addStretches">
-
-        <label for="openStretcher">Warm up Stretches</label>
-        <select id="openStretcher" type="number" ng-model="stretchgoal.open">
-            <option ng-repeat="open in opener" value="{{open.StretchId}}">{{open.StretchName}}</option>
-
-        </select>
-
-        <label for="middleStretcher">Spotlight Stretcher</label>
+        <!--<label for="middleStretcher">Spotlight Stretcher</label>
         <select id="middleStretcher" type="number" ng-model="stretchgoal.mid">
             <option ng-repeat="middle in middler" value="{{middle.StretchId}}">{{middle.StretchName}}</option>
         </select>
@@ -34,8 +29,5 @@
         <label for="closeStretcher">Final Stretch</label>
         <select id="closeStretcher" type="number" ng-model="stretchgoal.close">
             <option ng-repeat="close in closer" value="{{close.StretchId}}">{{close.StretchName}}</option>
-        </select>
+        </select>-->
 
-        <button ng-click="stretchOverview()">Let's GO MAMA</button>
-
-    </div>

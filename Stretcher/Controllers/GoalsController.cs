@@ -43,21 +43,31 @@ namespace Stretcher.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, goals);
         }
 
-
-        [HttpPut, Route("{id}")]
-        // public void Put(int id, [FromBody]string value)
-        public HttpResponseMessage UpdateGoal()
+        [HttpGet, Route("{id}")]
+        public HttpResponseMessage GetStretchGoal(StretchGoalOverview id)
         {
             var db = new ApplicationDbContext();
-            // UpdateGoal.GoalId = id;
-            return Request.CreateResponse(HttpStatusCode.OK);
+
+            //var goalid =  db.Goals.Find(id);
+            //var stretchgoal = from s in db.Stretches
+            //                  join g in db.Goals on s. equals g.GoalId
+            //                  select new {Stretch = s, Goal = g}
+
+
+            //SELECT team.Teamname, person.Firstname, person.Lastname
+            //FROM person
+            //JOIN coach ON person.id = coach.person_id
+            //JOIN team  ON coach.team_id = team.id
+            //And this will give you the players:
+
+            //SELECT team.Teamname, person.Firstname, person.Lastname
+            //FROM person
+            //JOIN player ON person.id = player.person_id
+            //JOIN team  ON player.team_id = team.id
+            var stretchgoal = "ahhhhhh";
+
+            return Request.CreateResponse(HttpStatusCode.OK, stretchgoal);
         }
 
-        [HttpDelete, Route("{id}")]
-        public HttpResponseMessage DeleteGoal()
-        {
-            //DeleteGoal(GoalID)
-            return Request.CreateResponse(HttpStatusCode.OK);
-        }
     }
 }

@@ -1,9 +1,14 @@
 ﻿app.controller("newGoalController", ["$http", "$scope", "$location", function ($http, $scope, $location) {
 
     $scope.newGoal = {};
-  
-    $scope.AddStretches = function () {
-        $scope.addStretches = false;
+    $scope.opener = {};
+
+    $http.get("api/stretches")
+        .then(function (result) {
+            $scope.opener = result.data;
+        });
+
+    $scope.CreateGoal = function () {
         let goal = $scope.goal;
         $http.post("/api/goals",
             {
@@ -14,11 +19,5 @@
             .then(result => console.log(result))
             .catch(error => console.log(error));
     };
-
-    $scope.stretchOverview = function () {
-        $scope.stretchgoal = "blah blah blah";
-
-        //$scope.post in stretch goals join table
-        //$location.goooo to overview of stretch sequence
-    };
+    
 }]);
