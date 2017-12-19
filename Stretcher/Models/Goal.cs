@@ -13,7 +13,5 @@ namespace Stretcher.Models
         public string GoalDescription { get; set; }
         public int Intensity { get; set; }
         public virtual List<Stretch> Stretches { get; set; }
-        
-
     }
 }

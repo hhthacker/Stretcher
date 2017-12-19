@@ -258,6 +258,10 @@
     <Compile Include="Migrations\201712180501441_DeleteDateTimes.Designer.cs">
       <DependentUpon>201712180501441_DeleteDateTimes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712190153565_StretchVirtualGoal.cs" />
+    <Compile Include="Migrations\201712190153565_StretchVirtualGoal.Designer.cs">
+      <DependentUpon>201712190153565_StretchVirtualGoal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -271,6 +275,8 @@
     <Compile Include="Results\ChallengeResult.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\MakeNewGoal.cs" />
+    <Compile Include="ViewModels\MakeNewStretch.cs" />
+    <Compile Include="ViewModels\PostNewReflection.cs" />
     <Compile Include="ViewModels\StretchGoalOverview.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -387,6 +393,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712180501441_DeleteDateTimes.resx">
       <DependentUpon>201712180501441_DeleteDateTimes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712190153565_StretchVirtualGoal.resx">
+      <DependentUpon>201712190153565_StretchVirtualGoal.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

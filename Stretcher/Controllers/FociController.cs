@@ -11,7 +11,6 @@ namespace Stretcher.Controllers
     [RoutePrefix("api/foci")]
     public class FociController : ApiController
     {
-        //GET ALL
         [HttpGet, Route("")]
         public HttpResponseMessage GetAllFoci()
         {
@@ -20,15 +19,13 @@ namespace Stretcher.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, foci);
         }
 
-        //GET ONE
         [HttpGet, Route("{id}")]
         public HttpResponseMessage GetOneFocus(int id)
         {
             var db = new ApplicationDbContext();
-            var focus = db.Foci;
+            var focus = db.Foci.Find(id);
             return Request.CreateResponse(HttpStatusCode.OK, focus);
         }
 
-        //GET MANY
     }
 }

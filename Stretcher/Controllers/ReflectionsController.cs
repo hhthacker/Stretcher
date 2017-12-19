@@ -5,27 +5,28 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using Stretcher.Models;
+using Stretcher.ViewModels;
 
 namespace Stretcher.Controllers
 {
     [RoutePrefix("api/Reflections")]
     public class ReflectionsController : ApiController
     {
-        //POST REFLECTION
+        [HttpPost, Route("")]
+        public HttpResponseMessage PostNewReflection(PostNewReflection PostNewReflection)
+        {
+            var db = new ApplicationDbContext();
+            var newReflection = new Reflection
+                {
+                    ReflectionTitle = PostNewReflection.ReflectionTitle,
+                    ReflectionNotes = PostNewReflection.ReflectionNotes
+                };
 
+            db.Reflections.Add(newReflection);
+            db.SaveChanges();
+            return Request.CreateResponse(HttpStatusCode.OK, newReflection);
+        }
 
-        //GET REFLECTION
-        //userid and reflectionid
-        //[HttpGet, Route("{id}")]
-        //public HttpResponseMessage GetOneReflection()
-        //{
-        //    var db = new ApplicationDbContext();
-        //    var reflection = db.Reflections;
-        //    return Request.CreateResponse(HttpStatusCode.OK, reflection);
-        //}
-
-        //GET ALL REFLECTIONS
-        //userid
         [HttpGet, Route("")]
         public HttpResponseMessage GetAllReflections()
         {
@@ -34,16 +35,13 @@ namespace Stretcher.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, reflections);
         }
 
-        //UPDATE REFLECTION
-
-        //DELETE REFLECTION
-        //userid and reflectionid
-        [HttpDelete, Route("")]
-        public HttpResponseMessage DeleteReflection()
+        [HttpDelete, Route("{id}")]
+        public HttpResponseMessage DeleteReflection(int id)
         {
             var db = new ApplicationDbContext();
-            var deleteReflection = db.Reflections;
-            return Request.CreateResponse(HttpStatusCode.OK, deleteReflection);
+            var deleteReflection = db.Reflections.Remove(db.Reflections.Find(id));
+            db.SaveChanges();
+            return Request.CreateResponse(HttpStatusCode.OK);
         }
     }
 }

@@ -15,5 +15,6 @@ namespace Stretcher.Models
         public int StretchSequence { get; set; }
         public int StretchDifficulty { get; set; }
         public virtual Focus Foci { get; set; }
+        public virtual Goal Goal { get; set; }
     }
 }

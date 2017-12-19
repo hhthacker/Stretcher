@@ -28,10 +28,10 @@ namespace Stretcher.Controllers
                 // User = db.Users.Find(User.Identity.GetUserId())
             };
 
-            //   db.Goals.Add(newGoal);
+            db.Goals.Add(newGoal);
             db.SaveChanges();
 
-            return Request.CreateResponse(HttpStatusCode.Created);
+            return Request.CreateResponse(HttpStatusCode.Created, newGoal);
 
         }
 
@@ -48,23 +48,11 @@ namespace Stretcher.Controllers
         {
             var db = new ApplicationDbContext();
 
-            //var goalid =  db.Goals.Find(id);
-            //var stretchgoal = from s in db.Stretches
-            //                  join g in db.Goals on s. equals g.GoalId
-            //                  select new {Stretch = s, Goal = g}
-
-
-            //SELECT team.Teamname, person.Firstname, person.Lastname
-            //FROM person
-            //JOIN coach ON person.id = coach.person_id
-            //JOIN team  ON coach.team_id = team.id
-            //And this will give you the players:
-
-            //SELECT team.Teamname, person.Firstname, person.Lastname
-            //FROM person
-            //JOIN player ON person.id = player.person_id
-            //JOIN team  ON player.team_id = team.id
-            var stretchgoal = "ahhhhhh";
+            var stretchgoal = from s in db.Stretches
+                              join g in db.Goals on s.Goal.GoalId equals g.GoalId
+                              select new { Stretch = s.StretchName,
+                                           Goal = g.GoalName,
+                                           StretchDescription = s.StretchDescription };
 
             return Request.CreateResponse(HttpStatusCode.OK, stretchgoal);
         }
