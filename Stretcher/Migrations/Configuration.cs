@@ -21,55 +21,42 @@ namespace Stretcher.Migrations
             var user = new ApplicationUser
             {
                 UserName = "heather",
-                Email = "hhthacker@gmail.com",
+                Email = "hhthacker@gmail.com"
             };
 
             userManager.CreateAsync(user, "password").Wait();
-            //  This method will be called after migrating to the latest version.
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
+            context.Stretches.AddOrUpdate( s => s.StretchName,
+                new Stretch() { StretchName = "Ostrich Stretch", StretchDescription = "Stick that neck out", StretchDifficulty = 1, StretchSequence = 3, StretchImage = "mew mew .jpg" },
+                new Stretch() { StretchName = "Kitten Stretch", StretchDescription = "Curl up like a kitten", StretchDifficulty = 1, StretchSequence = 1, StretchImage = "mew mew .jpg" },
+                new Stretch() { StretchName = "Donkey Stretch", StretchDescription = "Kick it!", StretchDifficulty = 2, StretchSequence = 2, StretchImage = "mew mew .jpg" },
+                new Stretch() { StretchName = "Hippo Stretch", StretchDescription = "Ice cream binge!", StretchDifficulty = 1, StretchSequence = 2, StretchImage = "mew mew .jpg" },
+                new Stretch() { StretchName = "Dancer Stretch", StretchDescription = "Don't stop til you get enough", StretchDifficulty = 3, StretchSequence = 1, StretchImage = "mew .jpg" },
+                new Stretch() { StretchName = "Mouse Stretch", StretchDescription = "Double click away", StretchDifficulty = 1, StretchSequence = 2, StretchImage = "mewtoo .jpg" },
+                new Stretch() { StretchName = "Pretzel Stretch", StretchDescription = "Twisted with a side of mustard", StretchDifficulty = 3, StretchSequence = 2, StretchImage = "mew woof .jpg" },
+                new Stretch() { StretchName = "Tree Stretch", StretchDescription = "Grow bb Grow", StretchDifficulty= 3, StretchSequence = 2, StretchImage = "woop woop .jpg"}
+            );
 
+            context.Goals.AddOrUpdate( g => g.GoalName,
+                new Goal() { Intensity = 2, GoalName = "Sun Salutation", GoalDescription = "Say hello to our one and only shining star!" },
+                new Goal() { Intensity = 3, GoalName = "Shoulder Flow", GoalDescription = "Roll em back roll em forward, little circles, big, big, big." },
+                new Goal() { Intensity = 1, GoalName = "Fetal Flow", GoalDescription = "Curl up and cry" }
+            );
 
+            context.Foci.AddOrUpdate( f => f.FocusArea,
+                new Focus() { FocusArea = "Balance", FocusDescription = "Challenges and tightens balances!" },
+                new Focus() { FocusArea = "Silence", FocusDescription = "Shhhhhh" },
+                new Focus() { FocusArea = "Toes", FocusDescription = "Wiggles the piggles!" },
+                new Focus() { FocusArea = "Heart", FocusDescription = "Keep it open, soak it up"}
+            );
 
-            Focus shoulderGirdle = new Focus { FocusArea = "Shoulder Girdle", Description = "Breathe in and gargle the girdle." };
-            context.Foci.AddOrUpdate(
-                f => f.FocusArea,
-                shoulderGirdle
-
-                );
-
-            Stretch appleStretch = new Stretch { StretchName = "Apple Pose", StretchDuration = DateTime.Now, StretchDescription = "It keeps the doctor away", StretchDifficulty = 1, StretchSequence = 2, StretchImage = "blah blah .jpg" };
-            context.Stretches.AddOrUpdate(
-                s => s.StretchName,
-                appleStretch
-               );
-
-            Goal superIntense = new Goal { Intensity = 3, OriginalGoalDate = DateTime.Now };
-            context.Goals.AddOrUpdate(
-                g => g.Intensity,
-                superIntense
-
-                );
+            context.Reflections.AddOrUpdate( r => r.ReflectionTitle,
+                new Reflection() { ReflectionCreation = DateTime.Now, ReflectionTitle = "Hot Breath", ReflectionNotes = "The breath of fire burned my belly like a summer without polar bears"},
+                new Reflection() { ReflectionCreation = DateTime.Now, ReflectionTitle = "Slow Shoulder fo sho", ReflectionNotes = "Ouchie mama my girdles are sizzling!"},
+                new Reflection() { ReflectionCreation = DateTime.Now, ReflectionTitle = "Child poser", ReflectionNotes = "Still a baby, not yet a toddler"}
+            );
 
             context.SaveChanges();
-
-            //context.GoalStretches.Add
-            //highlight line, control + . + shift to create variable
-            // context.StretchGoals.addorupdate(
-            //  x= > x.whategvermakesitunique,.
-            //   new stretchgoal { Stretch = appleStretch, goal = superIntense}
-            //   );
-
-            // context.SaveChanges();
 
         }
     }

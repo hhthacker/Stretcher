@@ -57,6 +57,9 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Abstractions" />
@@ -87,10 +90,6 @@
     </Reference>
     <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Optimization">
       <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
@@ -227,14 +226,41 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\FociController.cs" />
+    <Compile Include="Controllers\GoalsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Controllers\ReflectionsController.cs" />
+    <Compile Include="Controllers\StretchesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201712091915201_Models.cs" />
     <Compile Include="Migrations\201712091915201_Models.Designer.cs">
       <DependentUpon>201712091915201_Models.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712100030229_SeedData.cs" />
+    <Compile Include="Migrations\201712100030229_SeedData.Designer.cs">
+      <DependentUpon>201712100030229_SeedData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712161531262_VirtualStuffs.cs" />
+    <Compile Include="Migrations\201712161531262_VirtualStuffs.Designer.cs">
+      <DependentUpon>201712161531262_VirtualStuffs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712161606250_RemoveStretchGoals.cs" />
+    <Compile Include="Migrations\201712161606250_RemoveStretchGoals.Designer.cs">
+      <DependentUpon>201712161606250_RemoveStretchGoals.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712161800269_ModelUpdate.cs" />
+    <Compile Include="Migrations\201712161800269_ModelUpdate.Designer.cs">
+      <DependentUpon>201712161800269_ModelUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712180501441_DeleteDateTimes.cs" />
+    <Compile Include="Migrations\201712180501441_DeleteDateTimes.Designer.cs">
+      <DependentUpon>201712180501441_DeleteDateTimes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712190153565_StretchVirtualGoal.cs" />
+    <Compile Include="Migrations\201712190153565_StretchVirtualGoal.Designer.cs">
+      <DependentUpon>201712190153565_StretchVirtualGoal.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
@@ -244,21 +270,49 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Reflection.cs" />
     <Compile Include="Models\Stretch.cs" />
-    <Compile Include="Models\StretchGoal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\MakeNewGoal.cs" />
+    <Compile Include="ViewModels\MakeNewStretch.cs" />
+    <Compile Include="ViewModels\PostNewReflection.cs" />
+    <Compile Include="ViewModels\StretchGoalOverview.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App\app.js" />
+    <Content Include="App\appconfig.js" />
+    <Content Include="App\Controllers\allReflectionsController.js" />
+    <Content Include="App\Controllers\loginController.js" />
+    <Content Include="App\Controllers\allGoalsController.js" />
+    <Content Include="App\Controllers\homeController.js" />
+    <Content Include="App\Controllers\newGoalController.js" />
+    <Content Include="App\Controllers\newReflectionController.js" />
+    <Content Include="App\Controllers\stretchGoalController.js" />
+    <Content Include="App\Views\allgoals.html" />
+    <Content Include="App\Views\allreflections.html" />
+    <Content Include="App\Views\login.html" />
+    <Content Include="App\Views\home.html" />
+    <Content Include="App\Views\newgoal.html" />
+    <Content Include="App\Views\newreflection.html" />
+    <Content Include="App\Views\stretchgoal.html" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\angular-mocks.js" />
+    <Content Include="Scripts\angular-route.js" />
+    <Content Include="Scripts\angular-route.min.js" />
+    <Content Include="Scripts\angular.js" />
+    <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
     <Content Include="Areas\HelpPage\Views\Web.config" />
     <Content Include="Areas\HelpPage\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\ResourceModel.cshtml" />
@@ -278,9 +332,8 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
-    <Content Include="ApplicationInsights.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Scripts\angular.min.js.map" />
+    <Content Include="Scripts\angular-route.min.js.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -299,17 +352,14 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
     <Content Include="Content\Site.css" />
-    <Content Include="Views\Web.config" />
+    <Content Include="Views\Home\index.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Web.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
   </ItemGroup>
@@ -328,6 +378,24 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201712091915201_Models.resx">
       <DependentUpon>201712091915201_Models.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712100030229_SeedData.resx">
+      <DependentUpon>201712100030229_SeedData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712161531262_VirtualStuffs.resx">
+      <DependentUpon>201712161531262_VirtualStuffs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712161606250_RemoveStretchGoals.resx">
+      <DependentUpon>201712161606250_RemoveStretchGoals.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712161800269_ModelUpdate.resx">
+      <DependentUpon>201712161800269_ModelUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712180501441_DeleteDateTimes.resx">
+      <DependentUpon>201712180501441_DeleteDateTimes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712190153565_StretchVirtualGoal.resx">
+      <DependentUpon>201712190153565_StretchVirtualGoal.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
