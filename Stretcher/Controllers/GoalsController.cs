@@ -19,12 +19,15 @@ namespace Stretcher.Controllers
         {
             var db = new ApplicationDbContext();
 
+            var stretches = db.Stretches.Where(s => request.StretchIds.Contains(s.StretchId));
+
             var newGoal = new Goal
             {
 
                 Intensity = request.Intensity,
                 GoalName = request.GoalName,
-                GoalDescription = request.GoalDescription
+                GoalDescription = request.GoalDescription,
+                Stretches = stretches.ToList()
                 // User = db.Users.Find(User.Identity.GetUserId())
             };
 

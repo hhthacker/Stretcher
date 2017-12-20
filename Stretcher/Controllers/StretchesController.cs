@@ -20,6 +20,16 @@ namespace Stretcher.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, stretches);
 
         }
+
+        [HttpGet, Route("goal/{goalid}")]
+        public HttpResponseMessage GetStretchGoals(int goalid)
+        {
+            var db = new ApplicationDbContext();
+            var stretches = db.Stretches.Where(s => s.Goal.GoalId == goalid);
+            //where clause to specify data needed from model to use for view
+
+            return Request.CreateResponse(HttpStatusCode.OK, stretches);
+        }
         
         [HttpGet, Route("{id}")]
         public HttpResponseMessage GetOneStretch(Stretch id)
