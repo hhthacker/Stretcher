@@ -13,14 +13,15 @@ namespace Stretcher.Controllers
     public class ReflectionsController : ApiController
     {
         [HttpPost, Route("")]
-        public HttpResponseMessage PostNewReflection(PostNewReflection PostNewReflection)
+        public HttpResponseMessage PostNewReflection(PostNewReflection NewReflection)
         {
             var db = new ApplicationDbContext();
             var newReflection = new Reflection
-                {
-                    ReflectionTitle = PostNewReflection.ReflectionTitle,
-                    ReflectionNotes = PostNewReflection.ReflectionNotes
-                };
+            {
+                ReflectionTitle = NewReflection.ReflectionTitle,
+                ReflectionNotes = NewReflection.ReflectionNotes,
+                ReflectionCreation = DateTime.Now
+            };
 
             db.Reflections.Add(newReflection);
             db.SaveChanges();

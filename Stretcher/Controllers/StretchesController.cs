@@ -21,7 +21,7 @@ namespace Stretcher.Controllers
 
         }
         
-        [HttpGet, Route("id")]
+        [HttpGet, Route("{id}")]
         public HttpResponseMessage GetOneStretch(Stretch id)
         {
             var db = new ApplicationDbContext();
@@ -30,19 +30,19 @@ namespace Stretcher.Controllers
             
         }
 
-        [HttpPost, Route("")]
-        public HttpResponseMessage PostNewStretch(MakeNewStretch MakeNewStretch)
-        {
-            var db = new ApplicationDbContext();
-            var newstretch = new Stretch
-            {
-                StretchName = MakeNewStretch.StretchName,
-                StretchDescription = MakeNewStretch.StretchDescription
-            };
+        //[HttpPost, Route("")]
+        //public HttpResponseMessage PostNewStretch(MakeNewStretch MakeNewStretch)
+        //{
+        //    var db = new ApplicationDbContext();
+        //    var newstretch = new Stretch
+        //    {
+        //        StretchName = MakeNewStretch.StretchName,
+        //        StretchDescription = MakeNewStretch.StretchDescription
+        //    };
 
-            db.Stretches.Add(newstretch);
-            return Request.CreateResponse(HttpStatusCode.OK, newstretch);
-        }
+        //    db.Stretches.Add(newstretch);
+        //    return Request.CreateResponse(HttpStatusCode.OK, newstretch);
+        //}
 
 
     }
