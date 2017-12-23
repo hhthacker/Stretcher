@@ -3,6 +3,11 @@
     $scope.newGoal = {};
     $scope.opener = {};
 
+    $scope.stretchCheckBox = {
+        value1: true,
+        value2: 'YES'
+    };
+
     $http.get("api/stretches")
         .then(function (result) {
             $scope.opener = result.data;
