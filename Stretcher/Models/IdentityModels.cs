@@ -32,8 +32,6 @@ namespace Stretcher.Models
 
         public System.Data.Entity.DbSet<Stretcher.Models.Goal> Goals { get; set; }
 
-        public System.Data.Entity.DbSet<Stretcher.Models.Focus> Foci { get; set; }
-
         public System.Data.Entity.DbSet<Stretcher.Models.Reflection> Reflections { get; set; }
 
         public System.Data.Entity.DbSet<Stretcher.Models.Stretch> Stretches { get; set; }

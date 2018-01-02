@@ -27,27 +27,20 @@ namespace Stretcher.Migrations
             userManager.CreateAsync(user, "password").Wait();
 
             context.Stretches.AddOrUpdate( s => s.StretchName,
-                new Stretch() { StretchName = "Ostrich Stretch", StretchDescription = "Stick that neck out", StretchDifficulty = 1, StretchSequence = 3, StretchImage = "mew mew .jpg" },
-                new Stretch() { StretchName = "Kitten Stretch", StretchDescription = "Curl up like a kitten", StretchDifficulty = 1, StretchSequence = 1, StretchImage = "mew mew .jpg" },
-                new Stretch() { StretchName = "Donkey Stretch", StretchDescription = "Kick it!", StretchDifficulty = 2, StretchSequence = 2, StretchImage = "mew mew .jpg" },
-                new Stretch() { StretchName = "Hippo Stretch", StretchDescription = "Ice cream binge!", StretchDifficulty = 1, StretchSequence = 2, StretchImage = "mew mew .jpg" },
-                new Stretch() { StretchName = "Dancer Stretch", StretchDescription = "Don't stop til you get enough", StretchDifficulty = 3, StretchSequence = 1, StretchImage = "mew .jpg" },
-                new Stretch() { StretchName = "Mouse Stretch", StretchDescription = "Double click away", StretchDifficulty = 1, StretchSequence = 2, StretchImage = "mewtoo .jpg" },
-                new Stretch() { StretchName = "Pretzel Stretch", StretchDescription = "Twisted with a side of mustard", StretchDifficulty = 3, StretchSequence = 2, StretchImage = "mew woof .jpg" },
-                new Stretch() { StretchName = "Tree Stretch", StretchDescription = "Grow bb Grow", StretchDifficulty= 3, StretchSequence = 2, StretchImage = "woop woop .jpg"}
+                new Stretch() { StretchName = "Ostrich Stretch", StretchDescription = "Stick that neck out", StretchDifficulty = 1 },
+                new Stretch() { StretchName = "Kitten Stretch", StretchDescription = "Curl up like a kitten", StretchDifficulty = 1 },
+                new Stretch() { StretchName = "Donkey Stretch", StretchDescription = "Kick it!", StretchDifficulty = 2 },
+                new Stretch() { StretchName = "Hippo Stretch", StretchDescription = "Ice cream binge!", StretchDifficulty = 1 },
+                new Stretch() { StretchName = "Dancer Stretch", StretchDescription = "Don't stop til you get enough", StretchDifficulty = 3 },
+                new Stretch() { StretchName = "Mouse Stretch", StretchDescription = "Double click away", StretchDifficulty = 1 },
+                new Stretch() { StretchName = "Pretzel Stretch", StretchDescription = "Twisted with a side of mustard", StretchDifficulty = 3 },
+                new Stretch() { StretchName = "Tree Stretch", StretchDescription = "Grow bb Grow", StretchDifficulty= 3 }
             );
 
             context.Goals.AddOrUpdate( g => g.GoalName,
                 new Goal() { Intensity = 2, GoalName = "Sun Salutation", GoalDescription = "Say hello to our one and only shining star!" },
                 new Goal() { Intensity = 3, GoalName = "Shoulder Flow", GoalDescription = "Roll em back roll em forward, little circles, big, big, big." },
                 new Goal() { Intensity = 1, GoalName = "Fetal Flow", GoalDescription = "Curl up and cry" }
-            );
-
-            context.Foci.AddOrUpdate( f => f.FocusArea,
-                new Focus() { FocusArea = "Balance", FocusDescription = "Challenges and tightens balances!" },
-                new Focus() { FocusArea = "Silence", FocusDescription = "Shhhhhh" },
-                new Focus() { FocusArea = "Toes", FocusDescription = "Wiggles the piggles!" },
-                new Focus() { FocusArea = "Heart", FocusDescription = "Keep it open, soak it up"}
             );
 
             context.Reflections.AddOrUpdate( r => r.ReflectionTitle,

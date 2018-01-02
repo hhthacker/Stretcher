@@ -12,7 +12,6 @@ namespace Stretcher.ViewModels
     {
         public string StretchName { get; set; }
         public string StretchDescription { get; set; }
-        public int FocusId { get; set; }
         public virtual List<Goal> GoalName { get; set; }
     }
 }

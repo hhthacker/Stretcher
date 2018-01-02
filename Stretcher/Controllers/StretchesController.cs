@@ -29,23 +29,5 @@ namespace Stretcher.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, stretch);
             
         }
-
-        [HttpPost, Route("")]
-        public HttpResponseMessage PostNewStretch(MakeNewStretch MakeNewStretch)
-        {
-            var db = new ApplicationDbContext();
-            var newstretch = new Stretch
-            {
-                StretchName = MakeNewStretch.StretchName,
-                StretchDescription = MakeNewStretch.StretchDescription
-            };
-
-            db.Stretches.Add(newstretch);
-            return Request.CreateResponse(HttpStatusCode.OK, newstretch);
-        }
-
-
     }
-
-
 }
