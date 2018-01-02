@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Web.Http;
 using Stretcher.Models;
 using Stretcher.ViewModels;
+using System.Data.Entity;
 
 namespace Stretcher.Controllers
 {
@@ -20,8 +21,20 @@ namespace Stretcher.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, stretches);
 
         }
+
+        [HttpGet, Route("goal/{goalid}")]
+        public HttpResponseMessage GetStretchGoals(int goalid)
+        {
+            var db = new ApplicationDbContext();
+           // var stretches = db.Stretches.Where(s => s.Goal.GoalId == goalid);
+            var stretcher = db.Stretches.Include(d => d.Goal).ToList();
+
+            //where clause to specify data needed from model to use for view
+
+            return Request.CreateResponse(HttpStatusCode.OK, stretcher);
+        }
         
-        [HttpGet, Route("id")]
+        [HttpGet, Route("{id}")]
         public HttpResponseMessage GetOneStretch(Stretch id)
         {
             var db = new ApplicationDbContext();
@@ -30,19 +43,29 @@ namespace Stretcher.Controllers
             
         }
 
-        [HttpPost, Route("")]
-        public HttpResponseMessage PostNewStretch(MakeNewStretch MakeNewStretch)
+        [HttpDelete, Route("")]
+        public HttpResponseMessage DeleteStretch(int id)
         {
             var db = new ApplicationDbContext();
-            var newstretch = new Stretch
-            {
-                StretchName = MakeNewStretch.StretchName,
-                StretchDescription = MakeNewStretch.StretchDescription
-            };
-
-            db.Stretches.Add(newstretch);
-            return Request.CreateResponse(HttpStatusCode.OK, newstretch);
+            Stretch rmStretch = db.Stretches.Where(x => x.StretchId == id).Single<Stretch>();
+            var deleteStretch = db.Stretches.Remove(rmStretch);
+            db.SaveChanges();
+            return Request.CreateResponse(HttpStatusCode.OK);
         }
+
+        //[HttpPost, Route("")]
+        //public HttpResponseMessage PostNewStretch(MakeNewStretch MakeNewStretch)
+        //{
+        //    var db = new ApplicationDbContext();
+        //    var newstretch = new Stretch
+        //    {
+        //        StretchName = MakeNewStretch.StretchName,
+        //        StretchDescription = MakeNewStretch.StretchDescription
+        //    };
+
+        //    db.Stretches.Add(newstretch);
+        //    return Request.CreateResponse(HttpStatusCode.OK, newstretch);
+        //}
 
 
     }

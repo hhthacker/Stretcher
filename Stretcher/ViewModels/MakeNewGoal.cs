@@ -10,5 +10,6 @@ namespace Stretcher.ViewModels
         public int Intensity { get; set; }
         public string GoalName { get; set; }
         public string GoalDescription { get; set; }
+        public List<int> StretchIds { get; set; }
     }
 }

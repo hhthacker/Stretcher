@@ -12,22 +12,13 @@
         <option value="2">Refreshing</option>
         <option value="3">Deep Stretching</option>
     </select>
-    <label for="openStretcher">Warm up Stretches</label>
-    <select id="openStretcher" type="number">
-        <option ng-repeat="open in opener" value="{{open.StretchId}}">{{open.StretchName}}</option>
-    </select>
-
-    <button ng-click="CreateGoal()">Choose Goal Stretches</button>
-
-
-
-        <!--<label for="middleStretcher">Spotlight Stretcher</label>
-        <select id="middleStretcher" type="number" ng-model="stretchgoal.mid">
-            <option ng-repeat="middle in middler" value="{{middle.StretchId}}">{{middle.StretchName}}</option>
-        </select>
-
-        <label for="closeStretcher">Final Stretch</label>
-        <select id="closeStretcher" type="number" ng-model="stretchgoal.close">
-            <option ng-repeat="close in closer" value="{{close.StretchId}}">{{close.StretchName}}</option>
-        </select>-->
-
+<!-- STRETCH PICKER -->
+<form ng-repeat="open in opener" name="stretchPicker{{open.StretchId}}">
+    <label>
+       
+        {{open.StretchName}}
+        {{open.StretchDescription}}
+        <input type="checkbox" ng-model="stretchCheckBox.value1">
+    </label><br />
+</form>
+<button ng-click="CreateGoal()">Choose Goal Stretches</button>
