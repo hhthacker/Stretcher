@@ -13,13 +13,12 @@
         <option value="3">Deep Stretching</option>
     </select>
 
-    <form ng-repeat="open in opener" name="stretchPicker{{open.StretchId}}">
-        <label>
-
-            {{open.StretchName}}
-            {{open.StretchDescription}}
-            <input type="checkbox" ng-model="stretchCheckBox.value1">
-        </label><br />
-    </form>
+    <span ng-repeat="open in opener">
+            <input type="checkbox" 
+                   name="stretches" 
+                   ng-change="addRemoveStretch()"
+                   value="{{open.StretchId}}" 
+                   ng-model="open.selected" />
+        {{open.StretchName}} : {{open.StretchDescription}}
+    </span>
     <button ng-click="CreateGoal()">Choose Goal Stretches</button>
-

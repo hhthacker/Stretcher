@@ -269,6 +269,10 @@
     <Compile Include="Migrations\201801022127263_lessViewModels.Designer.cs">
       <DependentUpon>201801022127263_lessViewModels.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801022231260_virtualStretchList.cs" />
+    <Compile Include="Migrations\201801022231260_virtualStretchList.Designer.cs">
+      <DependentUpon>201801022231260_virtualStretchList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -407,6 +411,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801022127263_lessViewModels.resx">
       <DependentUpon>201801022127263_lessViewModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801022231260_virtualStretchList.resx">
+      <DependentUpon>201801022231260_virtualStretchList.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

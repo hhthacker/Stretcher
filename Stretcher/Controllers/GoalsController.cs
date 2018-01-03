@@ -24,7 +24,8 @@ namespace Stretcher.Controllers
 
                 Intensity = request.Intensity,
                 GoalName = request.GoalName,
-                GoalDescription = request.GoalDescription
+                GoalDescription = request.GoalDescription,
+                Stretches = request.Stretches
                 // User = db.Users.Find(User.Identity.GetUserId())
             };
 
