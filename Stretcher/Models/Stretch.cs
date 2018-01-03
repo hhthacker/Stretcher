@@ -13,5 +13,6 @@ namespace Stretcher.Models
         public string StretchDescription { get; set; }
         public int StretchDifficulty { get; set; }
         public virtual Goal Goal { get; set; }
+        public bool StretchSelect { get; set; }
     }
 }

@@ -273,6 +273,10 @@
     <Compile Include="Migrations\201801022231260_virtualStretchList.Designer.cs">
       <DependentUpon>201801022231260_virtualStretchList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801030132044_stretchSelect.cs" />
+    <Compile Include="Migrations\201801030132044_stretchSelect.Designer.cs">
+      <DependentUpon>201801030132044_stretchSelect.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -414,6 +418,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801022231260_virtualStretchList.resx">
       <DependentUpon>201801022231260_virtualStretchList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801030132044_stretchSelect.resx">
+      <DependentUpon>201801030132044_stretchSelect.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

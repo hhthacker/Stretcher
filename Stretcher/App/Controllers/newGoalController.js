@@ -3,7 +3,7 @@
     $scope.newGoal = {};
     $scope.opener = {};
     $scope.stretches = [];
-    
+
 
     $http.get("api/stretches")
         .then(function (result) {
@@ -11,17 +11,18 @@
             console.log("opener", $scope.opener);
         });
 
-    addRemoveStretch = function () {
-       let stretchesArray = new Array;
-        forEach(stretchesArray, function (stretches) {
-            if (open.selected) {
-                stretchesArray.push(open.StretchId);
-            }
-        })
-        $scope.stretches = stretchesArray;
-    };
-
     $scope.CreateGoal = function () {
+
+
+        for (let i = 0; i < $scope.opener.length; i++)
+        {
+            if ($scope.opener[i].StretchSelect == true)
+            {
+                $scope.stretches.push($scope.opener[i]);
+                console.log($scope.stretches);
+            };
+        };
+
 
         let goal = $scope.goal;
         $http.post("/api/goals",

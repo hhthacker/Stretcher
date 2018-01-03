@@ -15,10 +15,7 @@
 
     <span ng-repeat="open in opener">
             <input type="checkbox" 
-                   name="stretches" 
-                   ng-change="addRemoveStretch()"
-                   value="{{open.StretchId}}" 
-                   ng-model="open.selected" />
-        {{open.StretchName}} : {{open.StretchDescription}}
+                   ng-model="open.StretchSelect" />
+        {{open.StretchName}} : {{open.StretchDescription}} <br />
     </span>
     <button ng-click="CreateGoal()">Choose Goal Stretches</button>
