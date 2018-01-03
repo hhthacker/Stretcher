@@ -21,10 +21,10 @@ namespace Stretcher.Controllers
         }
         
         [HttpGet, Route("id")]
-        public HttpResponseMessage GetOneStretch(Stretch id)
+        public HttpResponseMessage GetOneStretch(int id)
         {
             var db = new ApplicationDbContext();
-            var stretch = db.Stretches.Find(id);
+            var stretch = db.Stretches.Where(s => s.StretchId.Equals(id));
             return Request.CreateResponse(HttpStatusCode.OK, stretch);
             
         }

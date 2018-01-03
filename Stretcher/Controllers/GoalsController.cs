@@ -43,19 +43,14 @@ namespace Stretcher.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, goals);
         }
 
-        //[HttpGet, Route("{id}")]
-        //public HttpResponseMessage GetStretchGoal(StretchGoalOverview id)
-        //{
-        //    var db = new ApplicationDbContext();
+        [HttpGet, Route("{id}")]
+        public HttpResponseMessage GetStretchGoal(int id)
+        {
+            var db = new ApplicationDbContext();
+            var stretchgoal = db.Stretches.Where(s => s.Goal.GoalId.Equals(id));
 
-        //    var stretchgoal = from s in db.Stretches
-        //                      join g in db.Goals on s.Goal.GoalId equals g.GoalId
-        //                      select new { Stretch = s.StretchName,
-        //                                   Goal = g.GoalName,
-        //                                   StretchDescription = s.StretchDescription };
-
-        //    return Request.CreateResponse(HttpStatusCode.OK, stretchgoal);
-        //}
+            return Request.CreateResponse(HttpStatusCode.OK, stretchgoal);
+        }
 
     }
 }
