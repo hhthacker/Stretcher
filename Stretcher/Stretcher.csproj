@@ -288,9 +288,6 @@
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="ViewModels\MakeNewGoal.cs" />
-    <Compile Include="ViewModels\PostNewReflection.cs" />
-    <Compile Include="ViewModels\StretchGoalOverview.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App\app.js" />

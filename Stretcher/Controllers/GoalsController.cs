@@ -5,7 +5,6 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using Stretcher.Models;
-using Stretcher.ViewModels;
 using Microsoft.AspNet.Identity;
 
 namespace Stretcher.Controllers
@@ -15,7 +14,7 @@ namespace Stretcher.Controllers
     public class GoalsController : ApiController
     {
         [HttpPost, Route("")]
-        public HttpResponseMessage CreateNewGoal(MakeNewGoal request)
+        public HttpResponseMessage CreateNewGoal(Goal request)
         {
             var db = new ApplicationDbContext();
 
@@ -44,19 +43,19 @@ namespace Stretcher.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, goals);
         }
 
-        [HttpGet, Route("{id}")]
-        public HttpResponseMessage GetStretchGoal(StretchGoalOverview id)
-        {
-            var db = new ApplicationDbContext();
+        //[HttpGet, Route("{id}")]
+        //public HttpResponseMessage GetStretchGoal(StretchGoalOverview id)
+        //{
+        //    var db = new ApplicationDbContext();
 
-            var stretchgoal = from s in db.Stretches
-                              join g in db.Goals on s.Goal.GoalId equals g.GoalId
-                              select new { Stretch = s.StretchName,
-                                           Goal = g.GoalName,
-                                           StretchDescription = s.StretchDescription };
+        //    var stretchgoal = from s in db.Stretches
+        //                      join g in db.Goals on s.Goal.GoalId equals g.GoalId
+        //                      select new { Stretch = s.StretchName,
+        //                                   Goal = g.GoalName,
+        //                                   StretchDescription = s.StretchDescription };
 
-            return Request.CreateResponse(HttpStatusCode.OK, stretchgoal);
-        }
+        //    return Request.CreateResponse(HttpStatusCode.OK, stretchgoal);
+        //}
 
     }
 }

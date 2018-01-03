@@ -16,12 +16,12 @@
 
         for (let i = 0; i < $scope.opener.length; i++)
         {
-            if ($scope.opener[i].StretchSelect == true)
+            if ($scope.opener[i].StretchSelect === true)
             {
                 $scope.stretches.push($scope.opener[i]);
                 console.log($scope.stretches);
-            };
-        };
+            }
+        }
 
 
         let goal = $scope.goal;

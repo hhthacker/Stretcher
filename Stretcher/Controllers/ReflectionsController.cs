@@ -5,7 +5,6 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using Stretcher.Models;
-using Stretcher.ViewModels;
 
 namespace Stretcher.Controllers
 {
@@ -13,7 +12,7 @@ namespace Stretcher.Controllers
     public class ReflectionsController : ApiController
     {
         [HttpPost, Route("")]
-        public HttpResponseMessage PostNewReflection(PostNewReflection PostNewReflection)
+        public HttpResponseMessage PostNewReflection(Reflection PostNewReflection)
         {
             var db = new ApplicationDbContext();
             var newReflection = new Reflection
