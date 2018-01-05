@@ -1,5 +1,5 @@
 # Stretcher
-NSS full stack capstone to generate sequences of stretches to be practiced as goals. It's a stretch goal generator!
+NSS full stack capstone to generate sequences of stretches to be practiced as goals.
 
 # Technologies Used:
 * C#.Net
