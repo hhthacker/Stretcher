@@ -10,7 +10,6 @@ using Microsoft.AspNet.Identity;
 namespace Stretcher.Controllers
 {
     [RoutePrefix("api/goals")]
-   // [Authorize]
     public class GoalsController : ApiController
     {
         [HttpPost, Route("")]
@@ -20,12 +19,10 @@ namespace Stretcher.Controllers
 
             var newGoal = new Goal
             {
-
                 Intensity = request.Intensity,
                 GoalName = request.GoalName,
                 GoalDescription = request.GoalDescription,
                 Stretches = request.Stretches
-                // User = db.Users.Find(User.Identity.GetUserId())
             };
 
             db.Goals.Add(newGoal);

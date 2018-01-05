@@ -293,7 +293,6 @@
     <Content Include="App\app.js" />
     <Content Include="App\appconfig.js" />
     <Content Include="App\Controllers\allReflectionsController.js" />
-    <Content Include="App\Controllers\loginController.js" />
     <Content Include="App\Controllers\allGoalsController.js" />
     <Content Include="App\Controllers\homeController.js" />
     <Content Include="App\Controllers\newGoalController.js" />
@@ -301,7 +300,6 @@
     <Content Include="App\Controllers\stretchGoalController.js" />
     <Content Include="App\Views\allgoals.html" />
     <Content Include="App\Views\allreflections.html" />
-    <Content Include="App\Views\login.html" />
     <Content Include="App\Views\home.html" />
     <Content Include="App\Views\newgoal.html" />
     <Content Include="App\Views\newreflection.html" />
