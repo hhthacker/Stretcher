@@ -1,4 +1,4 @@
-﻿app.controller("stretchGoalController", ["$http", "$scope", "$routeParams", function ($http, $scope, $routeParams) {
+﻿app.controller("stretchGoalController", ["$http", "$scope", "$routeParams", "$location", function ($http, $scope, $routeParams, $location) {
 
     $scope.stretches = {};
 
@@ -9,5 +9,10 @@
                 
                 $scope.stretches = result.data;
                 console.log("stretchgoal", $scope.stretches);
-            });
+        });
+
+    $scope.addReflection = function () {
+        $location.url("/newreflection");
+
+    };
 }]);

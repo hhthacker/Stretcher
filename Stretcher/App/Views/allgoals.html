@@ -7,11 +7,12 @@
 <body>
 
     <div class="jumbotron"><h1>let's practice stretch goals</h1></div>
+
     <div ng-repeat="goal in goals">
         <a ng-href="#!/stretchgoal/{{goal.GoalId}}">
-            <p class="col-sm-offset-1 col-sm-2">{{goal.GoalName}}</p></a>
-
+            <p class="col-sm-offset-1 col-sm-2"><strong>{{goal.GoalName}}</strong></p>
             <p class="col-sm-offset-1 col-sm-6">{{goal.GoalDescription}}</p>
+        </a>
 
     </div>
 

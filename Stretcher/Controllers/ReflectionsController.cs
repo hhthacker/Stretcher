@@ -18,7 +18,9 @@ namespace Stretcher.Controllers
             var newReflection = new Reflection
                 {
                     ReflectionTitle = PostNewReflection.ReflectionTitle,
-                    ReflectionNotes = PostNewReflection.ReflectionNotes
+                    ReflectionNotes = PostNewReflection.ReflectionNotes,
+                    ReflectionCreation = DateTime.Now,
+                    Goals = PostNewReflection.Goals
                 };
 
             db.Reflections.Add(newReflection);
@@ -32,15 +34,6 @@ namespace Stretcher.Controllers
             var db = new ApplicationDbContext();
             var reflections = db.Reflections;
             return Request.CreateResponse(HttpStatusCode.OK, reflections);
-        }
-
-        [HttpDelete, Route("{id}")]
-        public HttpResponseMessage DeleteReflection(int id)
-        {
-            var db = new ApplicationDbContext();
-            var deleteReflection = db.Reflections.Remove(db.Reflections.Find(id));
-            db.SaveChanges();
-            return Request.CreateResponse(HttpStatusCode.OK);
         }
     }
 }

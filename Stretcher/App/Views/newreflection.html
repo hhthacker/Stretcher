@@ -1,3 +1,6 @@
 ﻿<body>
     <div class="jumbotron"><h1>how do you feel, what do you think</h1></div>
+    <label for="refTitle">reflection title</label><input type="text" id="refTitle" ng-model="reflection.ReflectionTitle" />
+    <label for="refNote">reflection notes</label><input id="refNote" type="text" ng-model="reflection.ReflectionNotes"/>
+    <button ng-click="PostReflection()">take note</button>
 </body>

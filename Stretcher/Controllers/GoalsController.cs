@@ -29,7 +29,6 @@ namespace Stretcher.Controllers
             db.SaveChanges();
 
             return Request.CreateResponse(HttpStatusCode.Created, newGoal);
-
         }
 
         [HttpGet, Route("")]
