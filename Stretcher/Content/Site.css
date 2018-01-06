@@ -23,6 +23,10 @@ body {
     background-attachment: fixed;
 }
 
+p {
+    color: #BE6594;
+}
+
 a {
     color: #376B71;
     text-decoration: none;
@@ -39,6 +43,3 @@ a:hover {
     opacity: 0.8;
 }
 
-p {
-    color: #BE6594;
-}

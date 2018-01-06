@@ -1,9 +1,13 @@
-﻿app.controller("stretchGoalController", ["$http", "$scope", function ($http, $scope) {
+﻿app.controller("stretchGoalController", ["$http", "$scope", "$routeParams", function ($http, $scope, $routeParams) {
 
     $scope.stretches = {};
 
-    $http.get("/api/stretches")
-        .then(function (result) {
-            $scope.stretches = result.data;
-        });
+    var goalid = $routeParams.goalId;
+
+    $http.get(`/api/goals/${goalid}`)
+            .then(function (result) {
+                
+                $scope.stretches = result.data;
+                console.log("stretchgoal", $scope.stretches);
+            });
 }]);

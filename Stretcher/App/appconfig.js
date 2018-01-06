@@ -5,11 +5,6 @@
             templateUrl: "/App/Views/home.html",
             controller: "homeController"
         })
-        //.when("/login",
-        //{
-        //    templateUrl: "/App/Views/login.html",
-        //    controller: "loginController"
-        //})
         .when("/allgoals",
         {
             templateUrl: "/App/Views/allgoals.html",
@@ -20,7 +15,7 @@
             templateUrl: "/App/Views/newgoal.html",
             controller: "newGoalController"
         })
-        .when("/stretchgoal",
+        .when("/stretchgoal/:goalId",
         {
             templateUrl: "App/Views/stretchgoal.html",
             controller: "stretchGoalController"
