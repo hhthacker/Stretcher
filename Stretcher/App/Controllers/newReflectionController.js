@@ -1,13 +1,19 @@
-﻿app.controller("newReflectionController", ["$http", "$scope", "$location", function ($http, $scope, $location) {
+﻿app.controller("newReflectionController", ["$http", "$scope", "$routeParams", "$location", function ($http, $scope, $routeParams, $location) {
 
-    $scope.CreateReflection = function () {
-        let reflection = $scope.reflection;
+   // let reflectionGoal = $routeParams.goalId;
+
+    $scope.PostReflection = function () {
+    let reflection = $scope.reflection;
+
         $http.post("/api/reflections",
             {
                 ReflectionTitle: reflection.ReflectionTitle,
-                ReflectionNotes: reflection.ReflectionNotes
+                ReflectionNotes: reflection.ReflectionNotes,
+                //Goals: reflectionGoal
+
             })
-            .then(result => console.log(result))
+            .then(results => console.log(results))
             .catch(error => console.log(error));
     };
+   
 }]);

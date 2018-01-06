@@ -1,9 +1,7 @@
-﻿<h1 class="jumbotron">new reflection!</h1>
-<label for="newReflectionTitle">New Reflection Title</label>
-<input id="newReflectionTitle" ng-model="reflection.ReflectionTitle"/>
-
-<label for="newReflectionNotes">New Reflection Notes</label>
-<input id="newReflectionNotes" ng-model="reflection.ReflectionNotes" />
-
-<button ng-click="CreateReflection()">Create Reflection</button>
+﻿<body>
+    <div class="jumbotron"><h1>how do you feel, what do you think</h1></div>
+    <label for="refTitle">reflection title</label><input type="text" id="refTitle" ng-model="reflection.ReflectionTitle" />
+    <label for="refNote">reflection notes</label><input id="refNote" type="text" ng-model="reflection.ReflectionNotes"/>
+    <button ng-click="PostReflection()">take note</button>
+</body>
 

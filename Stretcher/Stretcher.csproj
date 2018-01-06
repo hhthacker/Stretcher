@@ -226,7 +226,6 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\FociController.cs" />
     <Compile Include="Controllers\GoalsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ReflectionsController.cs" />
@@ -262,10 +261,25 @@
     <Compile Include="Migrations\201712190153565_StretchVirtualGoal.Designer.cs">
       <DependentUpon>201712190153565_StretchVirtualGoal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801022119403_deleteFocus.cs" />
+    <Compile Include="Migrations\201801022119403_deleteFocus.Designer.cs">
+      <DependentUpon>201801022119403_deleteFocus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801022127263_lessViewModels.cs" />
+    <Compile Include="Migrations\201801022127263_lessViewModels.Designer.cs">
+      <DependentUpon>201801022127263_lessViewModels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801022231260_virtualStretchList.cs" />
+    <Compile Include="Migrations\201801022231260_virtualStretchList.Designer.cs">
+      <DependentUpon>201801022231260_virtualStretchList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801030132044_stretchSelect.cs" />
+    <Compile Include="Migrations\201801030132044_stretchSelect.Designer.cs">
+      <DependentUpon>201801030132044_stretchSelect.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\Focus.cs" />
     <Compile Include="Models\Goal.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Reflection.cs" />
@@ -274,16 +288,11 @@
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="ViewModels\MakeNewGoal.cs" />
-    <Compile Include="ViewModels\MakeNewStretch.cs" />
-    <Compile Include="ViewModels\PostNewReflection.cs" />
-    <Compile Include="ViewModels\StretchGoalOverview.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App\app.js" />
     <Content Include="App\appconfig.js" />
     <Content Include="App\Controllers\allReflectionsController.js" />
-    <Content Include="App\Controllers\loginController.js" />
     <Content Include="App\Controllers\allGoalsController.js" />
     <Content Include="App\Controllers\homeController.js" />
     <Content Include="App\Controllers\newGoalController.js" />
@@ -291,7 +300,6 @@
     <Content Include="App\Controllers\stretchGoalController.js" />
     <Content Include="App\Views\allgoals.html" />
     <Content Include="App\Views\allreflections.html" />
-    <Content Include="App\Views\login.html" />
     <Content Include="App\Views\home.html" />
     <Content Include="App\Views\newgoal.html" />
     <Content Include="App\Views\newreflection.html" />
@@ -396,6 +404,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712190153565_StretchVirtualGoal.resx">
       <DependentUpon>201712190153565_StretchVirtualGoal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801022119403_deleteFocus.resx">
+      <DependentUpon>201801022119403_deleteFocus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801022127263_lessViewModels.resx">
+      <DependentUpon>201801022127263_lessViewModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801022231260_virtualStretchList.resx">
+      <DependentUpon>201801022231260_virtualStretchList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801030132044_stretchSelect.resx">
+      <DependentUpon>201801030132044_stretchSelect.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

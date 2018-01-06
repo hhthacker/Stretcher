@@ -5,7 +5,6 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using Stretcher.Models;
-using Stretcher.ViewModels;
 
 namespace Stretcher.Controllers
 {
@@ -13,15 +12,16 @@ namespace Stretcher.Controllers
     public class ReflectionsController : ApiController
     {
         [HttpPost, Route("")]
-        public HttpResponseMessage PostNewReflection(PostNewReflection NewReflection)
+        public HttpResponseMessage PostNewReflection(Reflection PostNewReflection)
         {
             var db = new ApplicationDbContext();
             var newReflection = new Reflection
-            {
-                ReflectionTitle = NewReflection.ReflectionTitle,
-                ReflectionNotes = NewReflection.ReflectionNotes,
-                ReflectionCreation = DateTime.Now
-            };
+                {
+                    ReflectionTitle = PostNewReflection.ReflectionTitle,
+                    ReflectionNotes = PostNewReflection.ReflectionNotes,
+                    ReflectionCreation = DateTime.Now,
+                    Goals = PostNewReflection.Goals
+                };
 
             db.Reflections.Add(newReflection);
             db.SaveChanges();
@@ -34,15 +34,6 @@ namespace Stretcher.Controllers
             var db = new ApplicationDbContext();
             var reflections = db.Reflections;
             return Request.CreateResponse(HttpStatusCode.OK, reflections);
-        }
-
-        [HttpDelete, Route("{id}")]
-        public HttpResponseMessage DeleteReflection(int id)
-        {
-            var db = new ApplicationDbContext();
-            var deleteReflection = db.Reflections.Remove(db.Reflections.Find(id));
-            db.SaveChanges();
-            return Request.CreateResponse(HttpStatusCode.OK);
         }
     }
 }

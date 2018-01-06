@@ -1,10 +1,18 @@
-﻿app.controller("stretchGoalController", ["$http", "$scope", function ($http, $scope) {
+﻿app.controller("stretchGoalController", ["$http", "$scope", "$routeParams", "$location", function ($http, $scope, $routeParams, $location) {
 
     $scope.stretches = {};
 
-    $http.get("/api/stretches/goal/{goalid}")
-        .then(function (result) {
-            $scope.stretches = result.data;
-            console.log("data", result.data)
+    var goalid = $routeParams.goalId;
+
+    $http.get(`/api/goals/${goalid}`)
+            .then(function (result) {
+                
+                $scope.stretches = result.data;
+                console.log("stretchgoal", $scope.stretches);
         });
+
+    $scope.addReflection = function () {
+        $location.url("/newreflection");
+
+    };
 }]);
