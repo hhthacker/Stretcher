@@ -45,8 +45,7 @@ namespace Stretcher.Controllers
         {
             var db = new ApplicationDbContext();
             var stretchgoal = db.Stretches.Where(s => s.Goal.GoalId.Equals(id));
-            db.SaveChanges();
-            return Request.CreateResponse(HttpStatusCode.OK);
+            return Request.CreateResponse(HttpStatusCode.OK, stretchgoal);
         } 
     }
 }
