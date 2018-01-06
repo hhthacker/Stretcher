@@ -16,13 +16,13 @@ namespace Stretcher.Controllers
         public HttpResponseMessage CreateNewGoal(Goal request)
         {
             var db = new ApplicationDbContext();
-
             var newGoal = new Goal
             {
                 Intensity = request.Intensity,
                 GoalName = request.GoalName,
                 GoalDescription = request.GoalDescription,
                 Stretches = request.Stretches
+
             };
 
             db.Goals.Add(newGoal);
@@ -39,14 +39,14 @@ namespace Stretcher.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, goals);
         }
 
+
         [HttpGet, Route("{id}")]
         public HttpResponseMessage GetStretchGoal(int id)
         {
             var db = new ApplicationDbContext();
             var stretchgoal = db.Stretches.Where(s => s.Goal.GoalId.Equals(id));
-
-            return Request.CreateResponse(HttpStatusCode.OK, stretchgoal);
-        }
-
+            db.SaveChanges();
+            return Request.CreateResponse(HttpStatusCode.OK);
+        } 
     }
 }
